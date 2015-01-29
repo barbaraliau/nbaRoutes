@@ -11,7 +11,7 @@ app.service('teamService', function($http, $q){
 		}
 		return $http({
 		method: 'POST',
-		url: "https://api.parse.com/1/classes/" + gameObj.homeTeam,
+		url: url,
 		data: gameObj
 		}).then(function(data) {
 			console.log(data)
@@ -38,7 +38,6 @@ app.service('teamService', function($http, $q){
 			results.wins = wins;
 			results.losses = loss;
 			deferred.resolve(results);
-				console.log(results)
 
 			})
 		return deferred.promise;

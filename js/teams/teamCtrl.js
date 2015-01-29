@@ -9,7 +9,7 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
 		$scope.showNewGameForm = !$scope.showNewGameForm;	
 	};
 
-console.log($routeParams.team + "blah blah");
+
 	if ($routeParams.team === 'utahjazz') {
 		$scope.homeTeam = 'Utah Jazz';
 		$scope.logoPath = 'images/jazz-logo.png'

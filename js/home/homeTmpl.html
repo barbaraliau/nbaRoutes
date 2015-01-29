@@ -1,3 +1,25 @@
-<div class="inner-container">
+
+<div ng-controller="homeCtrl" ng-repeat="team in allTeams">
+
+<div class="home-inner-container" ng-control="homeCtrl">
+  <div class="logo">
+    <img ng-src="{{team.logoPath}}">
+  </div>
+  <div class="record">
+      <h1> Wins: {{team.wins}} Losses: {{team.losses}} </h1>
+  </div> 
+  <div class="team-data">
+    <div class="games" ng-repeat="game in team" ng-class="{'even' : $index % 2 === 0}">
+      Date: {{game.createdAt | date}} <br />
+      <!-- 
+        The below question marks should render like this
+        Utah Jazz (Or name of Team) - Score of the particular Game
+        Opponent Name - Opponent Score for that Game -->
+     
+      {{game.homeTeam}} - {{game.homeTeamScore}}<br />
+      {{game.opponent}}- {{game.opponentScore}} </br />
+    </div>
+  </div>
+</div>
 
 </div>
